@@ -51,15 +51,16 @@ ram.runtime = "150M"
         sha256 = "6b0e64ea6dca97c9fa7d89c25fb4cfdd198912a1d0f566101ecc9bee5f06a89d"
         autoupdate.strategy = "latest_github_release"
 
-[resources.system_user]
+    [resources.system_user]
+    allow_email = true
 
-[resources.install_dir]
+    [resources.install_dir]
 
-[resources.permissions]
-main.url = "/"
+    [resources.permissions]
+    main.url = "/"
 
-[resources.apt]
-packages = "mariadb-server, redis-server, php8.4-bcmath, php8.4-ctype, php8.4-dom, php8.4-fileinfo, php8.4-mbstring, php8.4-pdo, php8.4-tokenizer, php8.4-xml"
+    [resources.apt]
+    packages = "mariadb-server, redis-server, php8.4-bcmath, php8.4-ctype, php8.4-dom, php8.4-fileinfo, php8.4-mbstring, php8.4-pdo, php8.4-tokenizer, php8.4-xml"
 
-[resources.database]
-type = "mysql"
+    [resources.database]
+    type = "mysql"
