@@ -1,0 +1,4 @@
+- Open https://__DOMAIN__
+- Create a user account; this will be the __APP__ admin
+- Login, then go to 'Settings' and create a Cron key
+- You may now set the app's main permissions in YunoHost back to 'visitors' or 'all_users', as required.
