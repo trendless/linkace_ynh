@@ -1,1 +1,1 @@
-*   *   *   *   *   cd __INSTALL_DIR__ && php__PHP_VERSION__ artisan schedule:run > /dev/null
+* * * * * __APP__ /usr/bin/php__PHP_VERSION__ __INSTALL_DIR__/artisan schedule:run > /dev/null
