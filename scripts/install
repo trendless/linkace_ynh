@@ -32,7 +32,8 @@ ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir"
 
-chown "$app:www-data" "$install_dir/storage"
+chmod -R +w "$install_dir/storage"
+chown -R "$app:www-data" "$install_dir/storage"
 
 #=================================================
 # ADD APP ENV FILE
