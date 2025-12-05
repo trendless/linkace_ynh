@@ -47,9 +47,10 @@ ram.runtime = "150M"
 
     [resources.sources]
         [resources.sources.main]
-        url = "https://github.com/Kovah/LinkAce/archive/refs/tags/v2.4.1.tar.gz"
-        sha256 = "f42063068e21a5f3c5cb69c582f69fd008f3f1bd178712cc94392a7f03b669ba"
-        autoupdate.strategy = "latest_github_tag"
+        url = "https://github.com/Kovah/LinkAce/releases/download/v2.4.1/linkace-v2.4.1.zip"
+        sha256 = "6b0e64ea6dca97c9fa7d89c25fb4cfdd198912a1d0f566101ecc9bee5f06a89d"
+        autoupdate.strategy = "latest_github_release"
+        in_subdir = false
 
     [resources.system_user]
     allow_email = true
