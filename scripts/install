@@ -9,7 +9,7 @@ email=$(ynh_user_get_info --username="$admin" --key=mail)
 
 timezone=$(timedatectl show --value --property=Timezone)
 
-admin_pwd=$(ynh_string_random --length=12)
+admin_pwd=$(ynh_string_random --length=8)
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
@@ -71,8 +71,9 @@ pushd "$install_dir"
 #    ynh_exec_as_app "php$php_version" artisan --admin registeruser "$admin" "$email"
 popd
 
+csrf_token=$(ynh_local_curl "/setup/account" | sed -n 's/.*name="_token" value="\([^"]*\)".*/\1/p')
 #ynh_local_curl "/setup/database" "submit=submit"
-ynh_local_curl "/setup/account" "name=$admin" "email=$email" "password=$admin_pwd" "password_confirmation=$admin_pwd" "submit=submit"
+ynh_local_curl "/setup/account" "_token=$csrf_token" "name=$admin" "email=$email" "password=$admin_pwd" "password_confirmation=$admin_pwd" "submit=submit"
 
 #=================================================
 # ADD A CRON JOB
