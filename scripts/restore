@@ -39,6 +39,13 @@ ynh_systemctl --service="php$php_version-fpm" --action=reload
 ynh_systemctl --service=nginx --action=reload
 
 #=================================================
+# ADD CRON JOB
+#=================================================
+ynh_config_add --template="linkace.cron" --destination="/etc/cron.d/$app"
+chown root: "/etc/cron.d/$app"
+chmod 644 "/etc/cron.d/$app"
+
+#=================================================
 # END OF SCRIPT
 #=================================================
 ynh_script_progression "Restoration complete."
