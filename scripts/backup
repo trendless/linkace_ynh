@@ -30,5 +30,4 @@ ynh_mysql_dump_db > db.sql
 #=================================================
 # END OF SCRIPT
 #=================================================
-
 ynh_print_info "Backup script complete."
