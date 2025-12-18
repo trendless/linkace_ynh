@@ -1,1 +1,1 @@
-- __ADMIN_PWD__ -- change this after first login
+- Initial login password for __ADMIN__: __ADMIN_PWD__ (change asap)
